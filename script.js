@@ -44,6 +44,37 @@ document.addEventListener('DOMContentLoaded', function() {
         
         observer.observe(skillSection);
     }
+
+    // Portfolio "Load More" functionality
+    const loadMoreBtn = document.getElementById('load-more-projects');
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function() {
+            // Fetch additional projects using AJAX or reveal hidden ones
+            const hiddenProjects = document.querySelectorAll('.portfolio-item.hidden');
+            
+            // Show next batch of projects (up to 3)
+            let count = 0;
+            hiddenProjects.forEach(project => {
+                if (count < 3) {
+                    project.classList.remove('hidden');
+                    count++;
+                }
+            });
+            
+            // Hide button if no more projects to show
+            if (document.querySelectorAll('.portfolio-item.hidden').length === 0) {
+                loadMoreBtn.style.display = 'none';
+                
+                // Add "Contact Me" button when all projects are loaded
+                const buttonContainer = loadMoreBtn.parentElement;
+                const contactBtn = document.createElement('a');
+                contactBtn.href = '#contact';
+                contactBtn.className = 'ai-button inline-block';
+                contactBtn.textContent = 'Discuss Your Project';
+                buttonContainer.appendChild(contactBtn);
+            }
+        });
+    }
 });
 
 function initTheme() {

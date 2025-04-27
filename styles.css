@@ -600,3 +600,8 @@ body {
 @keyframes drawPath {
   to { stroke-dashoffset: 0; }
 }
+
+/* Portfolio items hidden state */
+.portfolio-item.hidden {
+  display: none;
+}
