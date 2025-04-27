@@ -1,26 +1,387 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Light mode - AI theme */
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --primary: #3b82f6;
+  --primary-light: #93c5fd;
+  --primary-dark: #1d4ed8;
+  --secondary: #8b5cf6;
+  --secondary-light: #c4b5fd;
+  --secondary-dark: #6d28d9;
+  --accent: #06b6d4;
+  --accent-light: #67e8f9;
+  --accent-dark: #0891b2;
+  --surface: #ffffff;
+  --surface-alt: #f1f5f9;
+  --border: rgba(15, 23, 42, 0.08);
+  --shadow: rgba(0, 0, 0, 0.04);
+  
+  /* Common variables */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-surface: var(--surface);
+  --color-surface-alt: var(--surface-alt);
+  --color-border: var(--border);
+  --color-shadow: var(--shadow);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Dark mode - AI theme */
+    --background: #0a0f1a;
+    --foreground: #f8fafc;
+    --primary: #3b82f6;
+    --primary-light: #1d4ed8;
+    --primary-dark: #93c5fd;
+    --secondary: #8b5cf6;
+    --secondary-light: #6d28d9;
+    --secondary-dark: #c4b5fd;
+    --accent: #06b6d4;
+    --accent-light: #0891b2;
+    --accent-dark: #67e8f9;
+    --surface: #111827;
+    --surface-alt: #1e293b;
+    --border: rgba(248, 250, 252, 0.1);
+    --shadow: rgba(0, 0, 0, 0.25);
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-image: 
+    radial-gradient(circle at 100% 0%, rgba(59, 130, 246, 0.08) 0%, transparent 25%),
+    radial-gradient(circle at 0% 100%, rgba(139, 92, 246, 0.08) 0%, transparent 25%);
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+/* Improve text visibility */
+.light-mode p, .light-mode h1, .light-mode h2, .light-mode h3, 
+.light-mode a, .light-mode div, .light-mode span {
+  color: var(--foreground);
+}
+
+/* Text with opacity in light mode should be darker */
+.light-mode .text-black\/70 {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+/* AI UI common elements */
+.ai-glow {
+  box-shadow: 0 0 15px var(--color-shadow);
+}
+
+.ai-gradient-text {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ai-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 20px var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ai-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px var(--shadow);
+}
+
+.ai-button {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+  border-radius: var(--radius-full);
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.ai-button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.ai-button-secondary {
+  background: var(--surface);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.ai-button-secondary:hover {
+  background: var(--surface-alt);
+  transform: translateY(-1px);
+}
+
+.ai-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+/* New AI UI elements */
+.ai-glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 20px var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.ai-glass-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px var(--shadow);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+/* Enhanced navigation styles */
+.ai-nav {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.dark-mode .ai-nav {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.ai-nav a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.ai-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.ai-nav a:hover::after {
+  transform: scaleX(1);
+}
+
+.ai-badge {
+  background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-light) 100%);
+  color: var(--foreground);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-weight: 500;
+}
+
+.ai-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-section::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, var(--primary-light) 0%, transparent 70%);
+  opacity: 0.1;
+  border-radius: 100%;
+  z-index: -1;
+  animation: pulse 15s infinite alternate ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.05; }
+  50% { transform: scale(1.5); opacity: 0.1; }
+  100% { transform: scale(1); opacity: 0.05; }
+}
+
+/* Fix for the theme toggle button */
+.ai-theme-toggle {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  box-shadow: 0 2px 10px var(--shadow);
+}
+
+.ai-theme-toggle:hover {
+  transform: rotate(30deg);
+  box-shadow: 0 4px 15px var(--shadow);
+}
+
+.ai-gradient-border {
+  position: relative;
+  border-radius: var(--radius-md);
+  padding: 1px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  overflow: hidden;
+}
+
+.ai-gradient-border-content {
+  background: var(--surface);
+  border-radius: calc(var(--radius-md) - 1px);
+  padding: 1rem;
+  height: 100%;
+}
+
+.ai-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0,
+    rgba(255, 255, 255, 0.2) 20%,
+    rgba(255, 255, 255, 0.5) 60%,
+    rgba(255, 255, 255, 0)
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Theme-specific for dark mode */
+.dark .ai-glass-card {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.dark .ai-nav {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode {
+  --background: #0a0f1a;
+  --foreground: #f8fafc;
+  --primary-light: #1d4ed8;
+  --primary-dark: #93c5fd;
+  --secondary-light: #6d28d9;
+  --secondary-dark: #c4b5fd;
+  --accent-light: #0891b2;
+  --accent-dark: #67e8f9;
+  --surface: #111827;
+  --surface-alt: #1e293b;
+  --border: rgba(248, 250, 252, 0.1);
+  --shadow: rgba(0, 0, 0, 0.25);
+}
+
+.light-mode {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --primary-light: #93c5fd;
+  --primary-dark: #1d4ed8;
+  --secondary-light: #c4b5fd;
+  --secondary-dark: #6d28d9;
+  --accent-light: #67e8f9;
+  --accent-dark: #0891b2;
+  --surface: #ffffff;
+  --surface-alt: #f1f5f9;
+  --border: rgba(15, 23, 42, 0.08);
+  --shadow: rgba(0, 0, 0, 0.04);
+}
+
+/* Ensure theme classes apply correctly */
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
+}
+
+/* Portfolio section specific styles */
+.portfolio-card-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ai-card:hover .portfolio-card-overlay {
+  opacity: 1;
+}
+
+/* Project technology badges */
+.tech-badge {
+  background: var(--surface-alt);
+  color: var(--foreground);
+  font-size: 0.65rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-full);
+  font-weight: 500;
+}
+
+.dark .tech-badge {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Portfolio image placeholder */
+.portfolio-placeholder {
+  background: linear-gradient(135deg, var(--surface-alt) 0%, var(--surface) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.dark .portfolio-placeholder {
+  background: linear-gradient(135deg, var(--surface) 0%, var(--surface-alt) 100%);
 }

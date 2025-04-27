@@ -1,0 +1,6 @@
+You'll need to add this dependency to your package.json:
+
+"jspdf-autotable": "^3.5.31"
+
+Then run:
+npm install jspdf-autotable
