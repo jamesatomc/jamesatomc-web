@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>James Atom - Developer & Designer Portfolio</title>
-  <meta name="description" content="Professional portfolio showcasing web development and design work by James Atom">
+  <title>Jamesatomc - Developer & Designer Portfolio</title>
+  <meta name="description" content="Professional portfolio showcasing web development and design work by Jamesatomc">
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -13,7 +13,7 @@
   <div class="min-h-screen flex flex-col">
     <!-- Navigation -->
     <nav class="ai-nav w-full py-4 px-8 sm:px-16 flex justify-between items-center">
-      <div class="font-bold text-xl ai-gradient-text">James Atom</div>
+      <div class="font-bold text-xl ai-gradient-text">Jamesatomc</div>
       <!-- Hamburger button for mobile -->
       <button id="nav-toggle" class="ai-nav-toggle sm:hidden" aria-label="Open navigation">
         <span class="ai-nav-toggle-bar"></span>
@@ -34,16 +34,40 @@
 
     <!-- Hero Section -->
     <section class="ai-section w-full px-8 py-24 sm:px-16 flex flex-col items-center sm:items-start gap-8">
-      <h1 class="text-4xl sm:text-6xl font-bold text-center sm:text-left max-w-2xl ai-gradient-text">
-        Building digital experiences that matter
-      </h1>
-      <p class="text-lg sm:text-xl max-w-xl text-center sm:text-left text-black/85 dark:text-white/70">
-        Developer, designer, and problem solver focused on creating intuitive and impactful web applications.
-      </p>
-      <div class="flex gap-4 mt-4">
-        <a href="#contact" class="ai-button-secondary">
-          Contact Me
-        </a>
+      <div class="hero-container relative z-10">
+        <div class="hero-badge mb-6 inline-block">
+          <span class="ai-badge">Blockchain Expert</span>
+          <span class="ai-badge ml-2">Rust Developer</span>
+        </div>
+        <h1 class="text-4xl sm:text-6xl font-bold text-center sm:text-left max-w-2xl ai-gradient-text mb-6">
+          Building <span class="relative inline-block">
+            secure
+            <svg class="absolute -bottom-3 left-0 w-full" viewBox="0 0 200 8" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 0 5 C 50 0, 150 0, 200 5 L 200 8 L 0 8 L 0 5" fill="rgba(139, 92, 246, 0.3)"></path>
+            </svg>
+          </span> digital experiences that matter
+        </h1>
+        <p class="text-lg sm:text-xl max-w-xl text-center sm:text-left text-black/85 dark:text-white/70 mb-8">
+          Specialized in <span class="font-semibold">blockchain infrastructure</span>, <span class="font-semibold">smart contracts</span>, and <span class="font-semibold">distributed systems</span> that solve real-world problems.
+        </p>
+        <div class="flex flex-wrap gap-4 mt-6">
+          <a href="#portfolio" class="ai-button">
+            View My Work
+          </a>
+          <a href="#contact" class="ai-button-secondary">
+            Contact Me
+          </a>
+        </div>
+      </div>
+      
+      <!-- Decorative elements -->
+      <div class="absolute right-0 top-20 hidden lg:block opacity-20 z-0">
+        <svg width="400" height="400" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <path fill="none" stroke="var(--primary)" stroke-width="0.5" 
+                d="M10,30 Q50,10 90,30 T170,30" class="hero-path" />
+          <path fill="none" stroke="var(--secondary)" stroke-width="0.5" 
+                d="M10,60 Q50,40 90,60 T170,60" class="hero-path" />
+        </svg>
       </div>
     </section>
 
@@ -52,21 +76,42 @@
       <div class="max-w-5xl mx-auto">
         <h2 class="text-3xl font-bold mb-8 ai-gradient-text">About Me</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div class="flex flex-col gap-4 ai-glass-card p-6">
+          <div class="flex flex-col gap-6 ai-glass-card p-6">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="ai-badge">Developer</span>
+              <span class="ai-badge">Designer</span>
+              <span class="ai-badge">Blockchain Expert</span>
+            </div>
             <p class="text-black/85 dark:text-white/70">
-              I'm a passionate developer with expertise in modern web technologies.
-              With a background in design and programming, I bring a unique perspective
+              I'm a passionate developer with expertise in modern web technologies and blockchain development.
+              With over 5 years of experience in building distributed systems and smart contracts, I bring a unique perspective
               to every project I work on.
             </p>
             <p class="text-black/85 dark:text-white/70">
               My approach focuses on creating clean, efficient, and user-friendly solutions
               that solve real problems and deliver exceptional experiences.
             </p>
+            <p class="text-black/85 dark:text-white/70">
+              Specializing in Rust, Golang, and blockchain infrastructure, I'm dedicated to creating secure, 
+              scalable applications that leverage cutting-edge technologies.
+            </p>
           </div>
-          <div class="ai-gradient-border h-64">
-            <div class="ai-gradient-border-content flex items-center justify-center">
-              <img src="https://github.com/jamesatomc.png" alt="James Atom profile photo"
-                class="rounded-full w-48 h-48 object-cover">
+          <div class="ai-gradient-border h-auto">
+            <div class="ai-gradient-border-content flex flex-col items-center justify-center p-6">
+              <img src="https://github.com/jamesatomc.png" alt="Jamesatomc profile photo"
+                class="rounded-full w-48 h-48 object-cover mb-6">
+              <div class="text-center">
+                <h3 class="text-xl font-semibold mb-2">Jamesatomc</h3>
+                <p class="text-black/70 dark:text-white/60 mb-4">Senior Developer & Blockchain Specialist</p>
+                <div class="flex gap-3 justify-center">
+                  <a href="https://github.com/jamesatomc" target="_blank" rel="noopener noreferrer" class="ai-button-secondary text-sm px-3 py-1">
+                    <span>GitHub</span>
+                  </a>
+                  <a href="https://linkedin.com/in/jiraphon" target="_blank" rel="noopener noreferrer" class="ai-button-secondary text-sm px-3 py-1">
+                    <span>LinkedIn</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -103,14 +148,220 @@
           </div>
           <div class="ai-card p-6">
             <div class="ai-badge mb-3">5</div>
-            <h3 class="text-xl font-semibold mb-3">Performance Optimization</h3>
-            <p class="text-black/85 dark:text-white/70">Enhancing speed and efficiency of existing applications.</p>
+            <h3 class="text-xl font-semibold mb-3">Blockchain Development</h3>
+            <p class="text-black/85 dark:text-white/70">Creating secure and efficient blockchain applications with smart contracts and distributed systems.</p>
           </div>
           <div class="ai-card p-6">
             <div class="ai-badge mb-3">6</div>
             <h3 class="text-xl font-semibold mb-3">Consultation</h3>
             <p class="text-black/85 dark:text-white/70">Providing technical guidance and solutions for your digital
               needs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section class="ai-section w-full px-8 py-16 sm:px-16">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8 ai-gradient-text">Technical Skills</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <!-- Mobile Development -->
+          <div class="ai-glass-card p-6 flex flex-col gap-3">
+            <div class="flex items-center mb-3">
+              <span class="ai-skill-icon">📱</span>
+              <h3 class="text-xl font-semibold ai-gradient-text ml-2">Mobile Development</h3>
+            </div>
+            <div class="space-y-4">
+              <div class="skill-item">
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold">Android (Kotlin, Jetpack Compose)</span>
+                  <span class="text-sm text-black/70 dark:text-white/50">Advanced</span>
+                </div>
+                <div class="ai-skill-bar">
+                  <div class="ai-skill-progress" style="width: 90%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold">Flutter & Dart</span>
+                  <span class="text-sm text-black/70 dark:text-white/50">Intermediate</span>
+                </div>
+                <div class="ai-skill-bar">
+                  <div class="ai-skill-progress" style="width: 75%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold">UI/UX Design (Figma)</span>
+                  <span class="text-sm text-black/70 dark:text-white/50">Proficient</span>
+                </div>
+                <div class="ai-skill-bar">
+                  <div class="ai-skill-progress" style="width: 80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Backend Development -->
+          <div class="ai-glass-card p-6 flex flex-col gap-3">
+            <div class="flex items-center mb-3">
+              <span class="ai-skill-icon">⚙️</span>
+              <h3 class="text-xl font-semibold ai-gradient-text ml-2">Backend Development</h3>
+            </div>
+            <div class="space-y-4">
+              <div class="skill-item">
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold">Rust</span>
+                  <span class="text-sm text-black/70 dark:text-white/50">Expert</span>
+                </div>
+                <div class="ai-skill-bar">
+                  <div class="ai-skill-progress" style="width: 95%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold">Golang</span>
+                  <span class="text-sm text-black/70 dark:text-white/50">Advanced</span>
+                </div>
+                <div class="ai-skill-bar">
+                  <div class="ai-skill-progress" style="width: 85%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold">Database Design</span>
+                  <span class="text-sm text-black/70 dark:text-white/50">Proficient</span>
+                </div>
+                <div class="ai-skill-bar">
+                  <div class="ai-skill-progress" style="width: 80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Blockchain Development -->
+          <div class="ai-glass-card p-6 flex flex-col gap-3">
+            <div class="flex items-center mb-3">
+              <span class="ai-skill-icon">🔗</span>
+              <h3 class="text-xl font-semibold ai-gradient-text ml-2">Blockchain Development</h3>
+            </div>
+            <div class="space-y-4">
+              <div class="skill-item">
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold">Move Smart Contracts</span>
+                  <span class="text-sm text-black/70 dark:text-white/50">Expert</span>
+                </div>
+                <div class="ai-skill-bar">
+                  <div class="ai-skill-progress" style="width: 95%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold">SDK Design</span>
+                  <span class="text-sm text-black/70 dark:text-white/50">Advanced</span>
+                </div>
+                <div class="ai-skill-bar">
+                  <div class="ai-skill-progress" style="width: 90%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold">Encryption & Security</span>
+                  <span class="text-sm text-black/70 dark:text-white/50">Proficient</span>
+                </div>
+                <div class="ai-skill-bar">
+                  <div class="ai-skill-progress" style="width: 85%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Web Development -->
+          <div class="ai-glass-card p-6 flex flex-col gap-3">
+            <div class="flex items-center mb-3">
+              <span class="ai-skill-icon">🌐</span>
+              <h3 class="text-xl font-semibold ai-gradient-text ml-2">Web Development</h3>
+            </div>
+            <div class="space-y-4">
+              <div class="skill-item">
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold">TypeScript & Next.js</span>
+                  <span class="text-sm text-black/70 dark:text-white/50">Advanced</span>
+                </div>
+                <div class="ai-skill-bar">
+                  <div class="ai-skill-progress" style="width: 85%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold">Web3 Applications</span>
+                  <span class="text-sm text-black/70 dark:text-white/50">Proficient</span>
+                </div>
+                <div class="ai-skill-bar">
+                  <div class="ai-skill-progress" style="width: 80%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold">Technical Documentation</span>
+                  <span class="text-sm text-black/70 dark:text-white/50">Expert</span>
+                </div>
+                <div class="ai-skill-bar">
+                  <div class="ai-skill-progress" style="width: 90%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- DevOps & Tools -->
+          <div class="ai-glass-card p-6 flex flex-col gap-3 md:col-span-2">
+            <div class="flex items-center mb-3">
+              <span class="ai-skill-icon">🔧</span>
+              <h3 class="text-xl font-semibold ai-gradient-text ml-2">DevOps & Tools</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="space-y-4">
+                <div class="skill-item">
+                  <div class="flex justify-between mb-1">
+                    <span class="font-semibold">Git CLI & Workflow</span>
+                    <span class="text-sm text-black/70 dark:text-white/50">Expert</span>
+                  </div>
+                  <div class="ai-skill-bar">
+                    <div class="ai-skill-progress" style="width: 95%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="flex justify-between mb-1">
+                    <span class="font-semibold">Docker</span>
+                    <span class="text-sm text-black/70 dark:text-white/50">Advanced</span>
+                  </div>
+                  <div class="ai-skill-bar">
+                    <div class="ai-skill-progress" style="width: 85%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="space-y-4">
+                <div class="skill-item">
+                  <div class="flex justify-between mb-1">
+                    <span class="font-semibold">Cloud Platforms</span>
+                    <span class="text-sm text-black/70 dark:text-white/50">Proficient</span>
+                  </div>
+                  <div class="ai-skill-bar">
+                    <div class="ai-skill-progress" style="width: 80%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="flex justify-between mb-1">
+                    <span class="font-semibold">Linux System Administration</span>
+                    <span class="text-sm text-black/70 dark:text-white/50">Advanced</span>
+                  </div>
+                  <div class="ai-skill-bar">
+                    <div class="ai-skill-progress" style="width: 90%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -233,7 +484,7 @@
       <div style="position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--primary),var(--secondary));border-radius:2px 2px 0 0;"></div>
       <div class="max-w-5xl mx-auto flex flex-col items-center gap-4">
         <div class="text-sm text-black/80 dark:text-white/60 text-center">
-          © <span id="current-year"></span> James Atom. All rights reserved.
+          © <span id="current-year"></span> Jamesatomc. All rights reserved.
         </div>
         <div class="flex gap-4 mt-2">
           <a href="https://github.com/jamesatomc" target="_blank" rel="noopener noreferrer"

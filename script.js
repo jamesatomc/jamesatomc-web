@@ -23,6 +23,27 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Add intersection observer for skill bars animation
+    const skillSection = document.querySelector('#skills');
+    if (skillSection) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.ai-skill-progress').forEach(bar => {
+                        // Reset the animation by removing and adding the style
+                        const width = bar.style.width;
+                        bar.style.width = '0';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 10);
+                    });
+                }
+            });
+        }, { threshold: 0.2 });
+        
+        observer.observe(skillSection);
+    }
 });
 
 function initTheme() {

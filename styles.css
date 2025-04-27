@@ -519,3 +519,84 @@ body {
   transform: translateY(-2px) scale(1.07);
   box-shadow: 0 4px 16px var(--shadow);
 }
+
+/* Skill section enhancements */
+.ai-skill-bar {
+  height: 8px;
+  background-color: var(--surface-alt);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.ai-skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+  border-radius: var(--radius-full);
+  position: relative;
+  overflow: hidden;
+  animation: skillLoad 1s ease-out;
+}
+
+.ai-skill-progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, 
+    rgba(255, 255, 255, 0) 0%, 
+    rgba(255, 255, 255, 0.2) 50%, 
+    rgba(255, 255, 255, 0) 100%);
+  transform: translateX(-100%);
+  animation: skillShimmer 2s infinite;
+}
+
+.ai-skill-icon {
+  font-size: 1.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+}
+
+.space-y-4 > * + * {
+  margin-top: 1rem;
+}
+
+@keyframes skillLoad {
+  0% { width: 0; }
+}
+
+@keyframes skillShimmer {
+  100% { transform: translateX(100%); }
+}
+
+/* Hero section enhancements */
+.hero-container {
+  animation: fadeIn 1s ease-out;
+}
+
+.hero-badge {
+  animation: slideDown 0.8s ease-out;
+}
+
+.hero-path {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: drawPath 3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes drawPath {
+  to { stroke-dashoffset: 0; }
+}
