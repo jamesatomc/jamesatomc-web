@@ -14,7 +14,13 @@
     <!-- Navigation -->
     <nav class="ai-nav w-full py-4 px-8 sm:px-16 flex justify-between items-center">
       <div class="font-bold text-xl ai-gradient-text">James Atom</div>
-      <div class="flex gap-6">
+      <!-- Hamburger button for mobile -->
+      <button id="nav-toggle" class="ai-nav-toggle sm:hidden" aria-label="Open navigation">
+        <span class="ai-nav-toggle-bar"></span>
+        <span class="ai-nav-toggle-bar"></span>
+        <span class="ai-nav-toggle-bar"></span>
+      </button>
+      <div id="nav-menu" class="flex gap-6 ai-nav-menu">
         <a href="#" class="hover:opacity-70 transition-opacity">Home</a>
         <a href="#portfolio" class="hover:opacity-70 transition-opacity">Portfolio</a>
         <a href="#contact" class="hover:opacity-70 transition-opacity">Contact</a>
@@ -223,21 +229,30 @@
     </section>
 
     <!-- Footer -->
-    <footer class="w-full px-8 py-8 sm:px-16 border-t border-black/10 dark:border-white/10 mt-auto">
-      <div class="max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
-        <div class="text-sm text-black/80 dark:text-white/60">
+    <footer class="w-full px-8 py-8 sm:px-16 mt-auto" style="background: var(--surface); position: relative;">
+      <div style="position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--primary),var(--secondary));border-radius:2px 2px 0 0;"></div>
+      <div class="max-w-5xl mx-auto flex flex-col items-center gap-4">
+        <div class="text-sm text-black/80 dark:text-white/60 text-center">
           © <span id="current-year"></span> James Atom. All rights reserved.
         </div>
-        <div class="flex gap-6">
+        <div class="flex gap-4 mt-2">
           <a href="https://github.com/jamesatomc" target="_blank" rel="noopener noreferrer"
-            class="hover:opacity-70 transition-opacity">GitHub</a>
+            class="ai-footer-icon" aria-label="GitHub">
+            <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.185 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.339-2.22-.253-4.555-1.112-4.555-4.951 0-1.093.39-1.987 1.029-2.687-.103-.254-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.396.1 2.65.64.7 1.028 1.594 1.028 2.687 0 3.848-2.338 4.695-4.566 4.944.36.31.68.921.68 1.857 0 1.34-.012 2.422-.012 2.752 0 .268.18.579.688.481C19.138 20.203 22 16.447 22 12.021 22 6.484 17.523 2 12 2Z"/></svg>
+          </a>
           <a href="https://linkedin.com/in/jiraphon" target="_blank" rel="noopener noreferrer"
-            class="hover:opacity-70 transition-opacity">LinkedIn</a>
+            class="ai-footer-icon" aria-label="LinkedIn">
+            <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path fill="currentColor" d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.27c-.97 0-1.75-.79-1.75-1.76 0-.97.78-1.76 1.75-1.76s1.75.79 1.75 1.76c0 .97-.78 1.76-1.75 1.76zm13.5 11.27h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.89v1.36h.04c.4-.75 1.37-1.54 2.82-1.54 3.01 0 3.57 1.98 3.57 4.56v5.62z"/></svg>
+          </a>
           <a href="https://x.com/jamesatomc" target="_blank" rel="noopener noreferrer"
-            class="hover:opacity-70 transition-opacity">Twitter</a>
+            class="ai-footer-icon" aria-label="X">
+            <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path fill="currentColor" d="M17.53 2.47A12 12 0 0 0 2.47 17.53 12 12 0 0 0 17.53 2.47ZM12 0C5.37 0 0 5.37 0 12c0 6.63 5.37 12 12 12s12-5.37 12-12c0-6.63-5.37-12-12-12Zm5.66 17.07h-2.02l-2.8-3.72-2.8 3.72H8.02l3.31-4.41-3.11-4.16h2.02l2.59 3.46 2.59-3.46h2.02l-3.11 4.16 3.31 4.41Z"/></svg>
+          </a>
         </div>
       </div>
     </footer>
+
+    
   </div>
 
   <script src="script.js"></script>

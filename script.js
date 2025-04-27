@@ -8,6 +8,21 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add event listener to theme toggle button
     document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+
+    // Hamburger menu toggle for mobile navbar
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('open');
+        });
+        // Optional: Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+                navMenu.classList.remove('open');
+            }
+        });
+    }
 });
 
 function initTheme() {

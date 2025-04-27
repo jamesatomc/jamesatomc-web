@@ -340,6 +340,75 @@ body {
   }
 }
 
+/* Hamburger icon styles */
+.ai-nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  align-items: center;
+  z-index: 110;
+  transition: box-shadow 0.2s;
+}
+
+.ai-nav-toggle-bar {
+  width: 22px;
+  height: 3px;
+  background: var(--foreground);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+@media (max-width: 639px) {
+  .ai-nav-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.5rem 2rem;
+    min-width: 180px;
+    box-shadow: 0 8px 24px var(--shadow);
+    z-index: 100;
+    animation: fadeInMenu 0.2s;
+  }
+  .ai-nav-menu.open {
+    display: flex;
+  }
+}
+
+@keyframes fadeInMenu {
+  from { opacity: 0; transform: translateY(-10px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* Hide nav toggle on desktop */
+@media (min-width: 640px) {
+  .ai-nav-toggle {
+    display: none;
+  }
+  .ai-nav-menu {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    min-width: 0;
+  }
+}
+
 /* Theme-specific for dark mode */
 .dark-mode {
   --background: #0a0f1a;
@@ -424,4 +493,29 @@ body {
 
 .dark-mode .text-white\/60 {
   color: rgba(255, 255, 255, 0.6);
+}
+
+/* Footer icon styles */
+.ai-footer-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--surface-alt) 60%, var(--primary-light) 100%);
+  color: var(--primary-dark);
+  transition: background 0.2s, box-shadow 0.2s, color 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px var(--shadow);
+  font-size: 1.25rem;
+  border: none;
+  outline: none;
+  text-decoration: none;
+}
+
+.ai-footer-icon:hover {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: #fff;
+  transform: translateY(-2px) scale(1.07);
+  box-shadow: 0 4px 16px var(--shadow);
 }
