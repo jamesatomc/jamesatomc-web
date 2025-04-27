@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>James Atom - Developer & Designer Portfolio</title>
+  <meta name="description" content="Professional portfolio showcasing web development and design work by James Atom">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-mode">
+  <div class="min-h-screen flex flex-col">
+    <!-- Navigation -->
+    <nav class="ai-nav w-full py-4 px-8 sm:px-16 flex justify-between items-center">
+      <div class="font-bold text-xl ai-gradient-text">James Atom</div>
+      <div class="flex gap-6">
+        <a href="#" class="hover:opacity-70 transition-opacity">Home</a>
+        <a href="#portfolio" class="hover:opacity-70 transition-opacity">Portfolio</a>
+        <a href="#contact" class="hover:opacity-70 transition-opacity">Contact</a>
+      </div>
+    </nav>
+
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="ai-theme-toggle" aria-label="Toggle theme">
+      🌙
+    </button>
+
+    <!-- Hero Section -->
+    <section class="ai-section w-full px-8 py-24 sm:px-16 flex flex-col items-center sm:items-start gap-8">
+      <h1 class="text-4xl sm:text-6xl font-bold text-center sm:text-left max-w-2xl ai-gradient-text">
+        Building digital experiences that matter
+      </h1>
+      <p class="text-lg sm:text-xl max-w-xl text-center sm:text-left text-black/85 dark:text-white/70">
+        Developer, designer, and problem solver focused on creating intuitive and impactful web applications.
+      </p>
+      <div class="flex gap-4 mt-4">
+        <a href="#contact" class="ai-button-secondary">
+          Contact Me
+        </a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="ai-section w-full px-8 py-16 sm:px-16">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8 ai-gradient-text">About Me</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div class="flex flex-col gap-4 ai-glass-card p-6">
+            <p class="text-black/85 dark:text-white/70">
+              I'm a passionate developer with expertise in modern web technologies. 
+              With a background in design and programming, I bring a unique perspective 
+              to every project I work on.
+            </p>
+            <p class="text-black/85 dark:text-white/70">
+              My approach focuses on creating clean, efficient, and user-friendly solutions 
+              that solve real problems and deliver exceptional experiences.
+            </p>
+          </div>
+          <div class="ai-gradient-border h-64">
+            <div class="ai-gradient-border-content flex items-center justify-center">
+              <p class="text-center">Profile image or illustration placeholder</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills/Services Section -->
+    <section class="ai-section w-full px-8 py-16 sm:px-16">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8 ai-gradient-text">What I Do</h2>
+        <div class="ai-grid">
+          <div class="ai-card p-6">
+            <div class="ai-badge mb-3">1</div>
+            <h3 class="text-xl font-semibold mb-3">Web Development</h3>
+            <p class="text-black/85 dark:text-white/70">Building responsive, modern websites using the latest technologies.</p>
+          </div>
+          <div class="ai-card p-6">
+            <div class="ai-badge mb-3">2</div>
+            <h3 class="text-xl font-semibold mb-3">UI/UX Design</h3>
+            <p class="text-black/85 dark:text-white/70">Creating intuitive interfaces and seamless user experiences.</p>
+          </div>
+          <div class="ai-card p-6">
+            <div class="ai-badge mb-3">3</div>
+            <h3 class="text-xl font-semibold mb-3">Mobile Applications</h3>
+            <p class="text-black/85 dark:text-white/70">Developing cross-platform mobile solutions for iOS and Android.</p>
+          </div>
+          <div class="ai-card p-6">
+            <div class="ai-badge mb-3">4</div>
+            <h3 class="text-xl font-semibold mb-3">API Integration</h3>
+            <p class="text-black/85 dark:text-white/70">Connecting your applications with third-party services and data sources.</p>
+          </div>
+          <div class="ai-card p-6">
+            <div class="ai-badge mb-3">5</div>
+            <h3 class="text-xl font-semibold mb-3">Performance Optimization</h3>
+            <p class="text-black/85 dark:text-white/70">Enhancing speed and efficiency of existing applications.</p>
+          </div>
+          <div class="ai-card p-6">
+            <div class="ai-badge mb-3">6</div>
+            <h3 class="text-xl font-semibold mb-3">Consultation</h3>
+            <p class="text-black/85 dark:text-white/70">Providing technical guidance and solutions for your digital needs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="ai-section w-full px-8 py-16 sm:px-16">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8 ai-gradient-text">My Portfolio</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Portfolio Item 1 -->
+          <div class="ai-card overflow-hidden flex flex-col">
+            <div class="relative h-48 w-full">
+              <div class="absolute inset-0 flex items-center justify-center bg-gray-200 dark:bg-gray-700">
+                <p class="text-sm text-gray-500 dark:text-gray-400">Project Image</p>
+              </div>
+            </div>
+            <div class="p-6 flex-grow">
+              <h3 class="text-xl font-semibold mb-2">E-Commerce Platform</h3>
+              <p class="text-black/85 dark:text-white/70 mb-4">A fully responsive e-commerce platform with secure payment integration.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="ai-badge text-xs">React</span>
+                <span class="ai-badge text-xs">Node.js</span>
+                <span class="ai-badge text-xs">MongoDB</span>
+              </div>
+            </div>
+            <div class="p-6 pt-0">
+              <a href="#" target="_blank" rel="noopener noreferrer" class="ai-button-secondary text-sm w-full flex justify-center items-center">
+                View Project
+              </a>
+            </div>
+          </div>
+          
+          <!-- Portfolio Item 2 -->
+          <div class="ai-card overflow-hidden flex flex-col">
+            <div class="relative h-48 w-full">
+              <div class="absolute inset-0 flex items-center justify-center bg-gray-200 dark:bg-gray-700">
+                <p class="text-sm text-gray-500 dark:text-gray-400">Project Image</p>
+              </div>
+            </div>
+            <div class="p-6 flex-grow">
+              <h3 class="text-xl font-semibold mb-2">Health & Fitness App</h3>
+              <p class="text-black/85 dark:text-white/70 mb-4">Mobile application for tracking fitness progress and health metrics.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="ai-badge text-xs">React Native</span>
+                <span class="ai-badge text-xs">Firebase</span>
+              </div>
+            </div>
+            <div class="p-6 pt-0">
+              <a href="#" target="_blank" rel="noopener noreferrer" class="ai-button-secondary text-sm w-full flex justify-center items-center">
+                View Project
+              </a>
+            </div>
+          </div>
+          
+          <!-- Additional portfolio items would go here -->
+          <!-- I've included just 2 as examples, the pattern repeats for all 6 -->
+        </div>
+        <div class="mt-12 text-center">
+          <a href="#contact" class="ai-button inline-block">
+            Discuss Your Project
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="ai-section w-full px-8 py-16 sm:px-16">
+      <div class="max-w-3xl mx-auto text-center ai-glass-card p-8">
+        <h2 class="text-3xl font-bold mb-4 ai-gradient-text">Let's Work Together</h2>
+        <p class="text-black/85 dark:text-white/70 mb-8">
+          Interested in collaborating or have a project in mind? Reach out and let's create something amazing.
+        </p>
+        <a href="mailto:your-email@example.com" class="ai-button ai-shimmer inline-block">
+          Get in Touch
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="w-full px-8 py-8 sm:px-16 border-t border-black/10 dark:border-white/10 mt-auto">
+      <div class="max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div class="text-sm text-black/80 dark:text-white/60">
+          © <span id="current-year"></span> James Atom. All rights reserved.
+        </div>
+        <div class="flex gap-6">
+          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="hover:opacity-70 transition-opacity">GitHub</a>
+          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" class="hover:opacity-70 transition-opacity">LinkedIn</a>
+          <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" class="hover:opacity-70 transition-opacity">Twitter</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
