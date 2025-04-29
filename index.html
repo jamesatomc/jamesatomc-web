@@ -22,12 +22,32 @@
       </button>
       <div id="nav-menu" class="flex gap-6 ai-nav-menu">
         <a href="#" class="hover:opacity-70 transition-opacity">Home</a>
-        <a href="#portfolio" class="hover:opacity-70 transition-opacity">Portfolio</a>
+        
+        <!-- Portfolio dropdown -->
+        <div class="dropdown">
+          <a href="#portfolio" class="dropdown-toggle hover:opacity-70 transition-opacity">Portfolio</a>
+          <div class="dropdown-menu">
+            <a href="#portfolio" class="dropdown-item">All Projects</a>
+            <a href="#portfolio?filter=blockchain" class="dropdown-item">Blockchain</a>
+            <a href="#portfolio?filter=web" class="dropdown-item">Web Development</a>
+          </div>
+        </div>
+        
+        <!-- Services dropdown -->
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle hover:opacity-70 transition-opacity">Services</a>
+          <div class="dropdown-menu">
+            <a href="#skills" class="dropdown-item">Technical Skills</a>
+            <a href="#about" class="dropdown-item">About Me</a>
+            <a href="#contact" class="dropdown-item">Consultation</a>
+          </div>
+        </div>
+        
         <a href="#contact" class="hover:opacity-70 transition-opacity">Contact</a>
       </div>
     </nav>
 
-    <!-- Theme Toggle -->
+    <!-- Theme Toggle - enhanced with animation -->
     <button id="theme-toggle" class="ai-theme-toggle" aria-label="Toggle theme">
       🌙
     </button>

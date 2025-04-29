@@ -24,6 +24,38 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Add scroll-based navbar visibility (inspired by React component)
+    const nav = document.querySelector('.ai-nav');
+    let prevScrollPos = window.pageYOffset;
+    
+    window.addEventListener('scroll', function() {
+        const currentScrollPos = window.pageYOffset;
+        // Show navbar when scrolling up or near the top
+        if (prevScrollPos > currentScrollPos || currentScrollPos < 10) {
+            nav.classList.remove('nav-hidden');
+        } else {
+            nav.classList.add('nav-hidden');
+        }
+        prevScrollPos = currentScrollPos;
+    });
+
+    // Initialize dropdown menus
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            const dropdownMenu = this.nextElementSibling;
+            dropdownMenu.classList.toggle('open');
+            
+            // Close other open dropdown menus
+            dropdownToggles.forEach(otherToggle => {
+                if (otherToggle !== toggle) {
+                    otherToggle.nextElementSibling.classList.remove('open');
+                }
+            });
+        });
+    });
+
     // Add intersection observer for skill bars animation
     const skillSection = document.querySelector('#skills');
     if (skillSection) {
@@ -103,6 +135,13 @@ function toggleTheme() {
     
     // Save theme preference
     localStorage.setItem('theme', newTheme);
+
+    // Add animation effect to theme toggle
+    const toggleButton = document.getElementById('theme-toggle');
+    toggleButton.classList.add('rotate');
+    setTimeout(() => {
+        toggleButton.classList.remove('rotate');
+    }, 300);
 }
 
 function setTheme(theme) {
@@ -118,4 +157,8 @@ function setTheme(theme) {
 function updateToggleButton(theme) {
     const toggleButton = document.getElementById('theme-toggle');
     toggleButton.textContent = theme === 'light' ? '🌙' : '☀️';
+    
+    // Add modern hover effect class
+    toggleButton.className = 'ai-theme-toggle';
+    toggleButton.classList.add(theme === 'light' ? 'moon-icon' : 'sun-icon');
 }

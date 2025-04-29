@@ -200,6 +200,95 @@ body {
   border-color: rgba(59, 130, 246, 0.3);
 }
 
+/* Navbar enhancements */
+.ai-nav {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-hidden {
+  transform: translateY(-100%);
+}
+
+.dark-mode .ai-nav {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.ai-nav a {
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+  color: var(--foreground);
+}
+
+.ai-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.ai-nav a:hover::after {
+  transform: scaleX(1);
+}
+
+.ai-nav a:hover {
+  transform: translateY(-2px);
+}
+
+/* Dropdown menu styles */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.95);
+  transform-origin: top;
+  min-width: 200px;
+  padding: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 16px var(--shadow);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
+  z-index: 100;
+}
+
+.dropdown-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) scale(1);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0s;
+}
+
+.dropdown-item {
+  padding: 0.5rem 1rem;
+  display: block;
+  transition: all 0.2s ease;
+  border-radius: var(--radius-sm);
+}
+
+.dropdown-item:hover {
+  background: var(--surface-alt);
+  transform: translateX(5px);
+}
+
 /* Enhanced navigation styles */
 .ai-nav {
   background: rgba(255, 255, 255, 0.05);
@@ -294,6 +383,36 @@ body {
 .ai-theme-toggle:hover {
   transform: rotate(30deg);
   box-shadow: 0 4px 15px var(--shadow);
+}
+
+.ai-theme-toggle.rotate {
+  animation: rotateButton 0.3s ease;
+}
+
+@keyframes rotateButton {
+  0% { transform: rotate(0); }
+  100% { transform: rotate(360deg); }
+}
+
+.ai-theme-toggle::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ai-theme-toggle.sun-icon::before {
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.2) 0%, transparent 70%);
+}
+
+.ai-theme-toggle.moon-icon::before {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, transparent 70%);
+}
+
+.ai-theme-toggle:hover::before {
+  opacity: 1;
 }
 
 .ai-gradient-border {
